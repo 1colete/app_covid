@@ -1,23 +1,22 @@
-# from soupsieve import select
 import streamlit as st
 import joblib
 import pickle
 import pandas as pd
 import numpy as np
 import os
-# import sklearn
+import bz2
 
-#import sqlite3
-#from monitor_for_app import *
 from variables import *
-#from datetime import datetime
+
 st.set_page_config(page_title = 'Previsor de COVID-19')
 
 @st.cache
 def load_data():
     current_path = os.getcwd()
-    dados_path = os.path.join(current_path, 'dados\cleaned\df_preped.pkl')
-    df = pd.read_pickle(dados_path)
+    dados_path = os.path.join(current_path, 'data/df_preped.pbz2')
+
+    data = bz2.BZ2File(dados_path, 'rb')
+    df = pickle.load(data)
     return df
 
 def load_model():
