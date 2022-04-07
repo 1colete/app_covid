@@ -3,6 +3,7 @@
 import pandas as pd
 import bz2
 import pickle
+import os
 
 
 # Load any compressed pickle file
