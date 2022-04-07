@@ -11,13 +11,13 @@ from variables import *
 st.set_page_config(page_title = 'Previsor de COVID-19')
 
 @st.cache
-def load_data():
-    current_path = os.getcwd()
-    dados_path = os.path.join(current_path, 'data/df_preped.pbz2')
+# def load_data():
+#     current_path = os.getcwd()
+#     dados_path = os.path.join(current_path, 'data/df_preped.pbz2')
 
-    data = bz2.BZ2File(dados_path, 'rb')
-    df = pickle.load(data)
-    return df
+#     data = bz2.BZ2File(dados_path, 'rb')
+#     df = pickle.load(data)
+#     return df
 
 def load_model():
 	# load_model = joblib.load(open(os.path.join(model),"rb"))
@@ -42,13 +42,13 @@ def main():
         st.title('Mais informações sobre o conjunto de dados')
         st.markdown(data_description, unsafe_allow_html = True)
 
-        with st.expander('Estatisticas', expanded = False):
-            st.write('Podemos ver estatisticas para as colunas numéricas.')
-            st.write(df.describe())
+        # with st.expander('Estatisticas', expanded = False):
+        #     st.write('Podemos ver estatisticas para as colunas numéricas.')
+        #     st.write(df.describe())
 
-        with st.expander('Valores Targets'):
-            st.write(f'Temos {round(df.obito.value_counts(normalize = True)*100, 2)[1]} % de obtidos na base.')
-            st.write(round(df.obito.value_counts(normalize = True)*100, 2))
+        # with st.expander('Valores Targets'):
+        #     st.write(f'Temos {round(df.obito.value_counts(normalize = True)*100, 2)[1]} % de obtidos na base.')
+        #     st.write(round(df.obito.value_counts(normalize = True)*100, 2))
 
     elif page_option == 'Predição':
         st.title('Predição')
