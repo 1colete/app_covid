@@ -9,7 +9,7 @@ import os
 
 #import sqlite3
 #from monitor_for_app import *
-# from variables import *
+from variables import *
 #from datetime import datetime
 st.set_page_config(page_title = 'Previsor de COVID-19')
 
@@ -37,11 +37,11 @@ def main():
     
     if page_option == 'Início':
         st.title('Previsor COVID-19 ')
-        # st.markdown(home_page_text, unsafe_allow_html = True)
+        st.markdown(home_page_text, unsafe_allow_html = True)
         
     elif page_option == 'Dados':
         st.title('Mais informações sobre o conjunto de dados')
-        # st.markdown(data_description, unsafe_allow_html = True)
+        st.markdown(data_description, unsafe_allow_html = True)
 
         # with st.expander('Estatisticas', expanded = False):
         #     st.write('Podemos ver estatisticas para as colunas numéricas.')
@@ -84,7 +84,7 @@ def main():
                
     else:
         st.title('Sobre')
-        # st.markdown(about_text, unsafe_allow_html = True)
+        st.markdown(about_text, unsafe_allow_html = True)
         
     
 main()
