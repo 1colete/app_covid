@@ -1,7 +1,18 @@
 # SECTION HOMEPAGE
 
-# import pandas as pd
-# df = pd.read_pickle('dados/cleaned/df_preped.pkl')
+import pandas as pd
+import bz2
+import pickle
+
+
+# Load any compressed pickle file
+def decompress_pickle(file):
+    data = bz2.BZ2File(file, 'rb')
+    data = pickle.load(data)
+    return data
+
+
+df = decompress_pickle('data/df_preped.pbz2')
 
 
 home_page_text = """
