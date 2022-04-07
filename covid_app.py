@@ -24,7 +24,7 @@ def load_model():
 	# load_model = joblib.load(open(os.path.join(model),"rb"))
     current_path = os.getcwd()
     model_path = os.path.join(current_path, 'models/clf_tuned.pkl')
-    load_model = pickle.load(open(f'models/clf_tuned.pkl', 'rb'))
+    load_model = pickle.load(open(model_path, 'rb'))
     # load_model = joblib.load(open(model_path, 'rb'))
     return load_model
 
